@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+
+    height: 70px;
+}
+.menu a{
+    text-decoration: none;
+    padding-right: 50px;
+    font-size: 18px;
+}
+
+.abb{
+    margin-top: 100px;
+}
+.abb h1{
+    text-align: center;
+    margin-bottom: 50px
+}
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 18px;
+}
+#link-before{
+    width: 487px;
+    height: 30px;
+    border: 1px black solid;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.radio-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+.radio-buttons label{
+    margin-right: 15px;
+}
+.nick{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nick label{
+    margin-right: 50px;
+}
+form button{
+    width: 200px;
+    margin-top: 30px;
+    height: 33px;
+}
+.btn{
+margin-left: 150px;
+}
+
+form  .inputs{
+width: 500px;
+}
+
+.form-auto {
+    margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-auto input{
+    width: 200px;
+    height: 30px;
+    margin: 7px;
+}
+.form-auto button{
+    margin-top: 25px;
+    height: 30px;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+table{
+    width: 1000px;
+    border: 1px solid black:
+}
+td{
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+}
+.unlogin{
+    margin-top: 100px;
+}
+.table-btn{
+height: 30px;
+width: 300px;
+}
+.unlogin-form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.delete{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
