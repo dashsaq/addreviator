@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+<link type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="menu">
+    {% for i in menu %}
+        <a class="item" href="{{i.url}}">{{i.name}}</a>
+    {% endfor %}
+</div>
+
+<div class="abb">
+        <h1>Cокращатель</h1>
+        <form action="/short" method="POST">
+            <div class="inputs">
+
+                <div class="link">
+                    <input id="link-before" name="href" type="text" placeholder="Введите ссылку">
+                </div>
+                 <div class="nick">
+                    <label for="psevdo">Введите ключевое слово (*по желанию)</label>
+                    <input id="psevdo" name="psevdo" type="text"><br>
+                </div>
+                <div class="radio-buttons">
+                    <div class="item">
+
+                        <input type="radio" id="pub" name="how" value="{{type[0][0]}}" checked/>
+                        <label for="pub">Публичная</label>
+                    </div>
+                                {% if 'user_login' in session and session['user_login']!=None: %}
+
+                    <div class="item">
+                        <input type="radio" id="obsh" name="how" value="{{type[1][0]}}"  />
+                        <label for="obsh">Общая</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" id="priv" name="how" value="{{type[2][0]}}"  />
+                        <label for="priv">Приватная</label>
+                    </div>
+                    {% else: %}
+                        <br>
+            {% endif %}
+                </div>
+                <div class="btn">
+                <button>Сократить</button>
+            </div>
+            </div>
+
+        </form>
+    <p style="color:red">{% for msg in get_flashed_messages() %}</p>
+
+              {% if baselink=='': %}
+              <p>{{msg}}</p>
+              {% else: %}
+                <a class="sslka" href="{{baselink}}href/{{msg}}">{{baselink}}href/{{msg}}</a>
+              {% endif %}
+            {% endfor %}
+    </div>
+
+</body>
+</html>
+
+
+
+
+

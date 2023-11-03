@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+<link type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="menu">
+    {% for i in menu %}
+        <a class="item" href="{{i.url}}">{{i.name}}</a>
+    {% endfor %}
+</div>
+
+<div class="abb">
+        <h1>{{title}}</h1>
+        <form class="form-auto" action="/insert" method="POST">
+            <input type="text" name="log" placeholder="Введите логин">
+            <input type="password" name="pass" placeholder="Введите пароль">
+            <input type="password" name="passtwo" placeholder="Подтвердите пароль">
+            <button>Зарегистрироваться</button>
+        </form>
+    {% for msg in get_flashed_messages() %}
+            <p style="color:red;">{{msg}}</p>
+            {% endfor %}
+    </div>
+</body>
+</html>
+

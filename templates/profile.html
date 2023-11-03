@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+<link type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="menu">
+    {% for i in menu %}
+        <a class="item" href="{{i.url}}">{{i.name}}</a>
+    {% endfor %}
+</div>
+
+<div class="profile">
+    <h2>{{session['user_login']}}</h2>
+        {% for h in hrefs %}
+
+    <table>
+        <tr>
+            <td><b>Ссылка</b></td>
+            <td><b>Переходы</b></td>
+            <td><b>Тип</b></td>
+            <td><b>Удалить</b></td>
+        </tr>
+        <tr>
+             <form action="/updatehref" method="post">
+        {% for msg in get_flashed_messages() %}
+                    {{msg}}
+                    {% endfor %}
+            <td><a href="{{baselink}}href/{{h[2]}}">{{baselink}}href/{{h[2]}}</a></td>
+            <td>{{h[5]}}</td>
+            <td>{{h[7]}}</td>
+            <td>
+    </form>
+        <form action="/delete" method="POST" class="delete">
+                    <button name="idd" class="table-btn" value="{{h[0]}}">Удалить</button>
+
+            </td>
+        </tr>
+             {% endfor %}
+    </table>
+    </form>
+    </div>
+<form class="unlogin-form" action="/logout" method="post">
+    <button class="unlogin">Выйти</button>
+</form>
+</body>
+</html>
